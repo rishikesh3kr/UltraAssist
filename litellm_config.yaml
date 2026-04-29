@@ -1,0 +1,20 @@
+model_list:
+  - model_name: claude-4-sonnet
+    litellm_params:
+      model: bedrock/us.anthropic.claude-sonnet-4-20250514-v1:0
+      aws_region_name: us-east-1
+  - model_name: claude-4-5-haiku
+    litellm_params:
+      model: bedrock/us.anthropic.claude-haiku-4-5-20251001-v1:0
+      aws_region_name: us-east-1
+  - model_name: open-ai-gpt-oss-120b
+    litellm_params:
+      model: bedrock/openai.gpt-oss-120b-1:0
+      aws_region_name: us-east-1
+
+litellm_settings:
+  telemetry: false
+  success_callback: ["usage", "print"]
+  failure_callback: ["print"]
+  stream_options:
+    include_usage: true
